@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <script src="https://kit.fontawesome.com/250aeba424.js" crossorigin="anonymous"></script>
+
+    <style>
+       * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgb(80,100,12);
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        
+        header nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        header nav ul #actual_page {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-size: 22px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 300;
+            font-size: 22px;
+            padding: 3px;
+        }
+
+        header nav ul li a:hover {
+            color: black;
+            transition: 0.5s;
+        }
+
+        header nav .checkbtn {
+            font-size: 30px;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        header nav h1 {
+            font-weight: normal;
+        }
+
+        header nav ul li i {
+            margin-right: 5px;
+        }
+
+        header nav #check {
+            display: none;
+        }
+
+        header nav form {
+            display: inline-block;
+        }
+
+        header nav ul #home_text{
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-size: 22px;
+        }
+
+ 
+
+        @media (max-width: 920px) {
+            header nav .checkbtn {
+                display: block;
+                margin-left: 30px;
+            }
+
+            header nav form {
+                flex: 1;
+                display: flex;
+                align-items: center;
+            }
+
+            header nav form input[type="text"] {
+                width: 100%;
+                max-width: 200px;
+                padding: 5px;
+            }
+
+            header nav form input[type="submit"] {
+                margin-left: 10px;
+            }
+
+            header nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            header nav h1 {
+                flex: 1;
+                text-align: center;
+            }
+
+
+
+            header nav ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background-color: rgb(80,100,12);
+                top: 110px;
+                left: -100%;
+                text-align: center;
+                transition: all .5s;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+
+            header nav ul li a {
+                font-size: 20px;
+            }
+
+            #check:checked ~ ul {
+                left: 0;
+            }
+
+            header nav .logo-header {
+                margin-left: 0;
+            }
+        }
+
+
+        .no-scroll {
+        overflow-y: hidden;
+    }
+
+    footer {
+            display: flex;
+            background-color: rgb(80, 100, 12);
+            padding: 30px;
+            justify-content: space-between;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            align-items: center;
+
+        }
+
+    footer h2{
+        font-weight: normal;
+    }
+
+    footer p {
+        font-weight: lighter;
+    }
+
+    @media (max-width:500px){
+
+        footer {
+            justify-content: space-between;
+        }
+        footer p{
+            font-size: 10px;
+        }
+    }
+
+
+    </style>
+
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <h1>Allgreens</h1>
+
+            <ul>
+                <li><a href="index.html" class="navbar-link">Home</a></li>
+                <li><a href="login.html" class="navbar-link">Login</a></li>
+                <li><a href="register.html" class="navbar-link">Registro</a></li>
+                <li><a href="products.html" class="navbar-link">Produtos</a></li>
+                <li class="cart"  id="home_text"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>Carrinho</li>
+
+            </ul>
+
+            <!-- <footer>
+                <h2> Allgreens</h2>
+        
+                <p> All rights reserved | Allgreens 2023</p>
+            </footer> -->
+        
+            
+        </nav>
+    </header>
