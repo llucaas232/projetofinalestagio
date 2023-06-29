@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/250aeba424.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgb(80, 100, 12);
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        header nav ul li {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 300;
+            font-size: 22px;
+            padding: 3px;
+        }
+
+        header nav ul li a:hover {
+            color: black;
+            transition: 0.5s;
+        }
+
+        header nav ul #home_text {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-size: 22px;
+        }
+
+        header nav .checkbtn {
+            font-size: 30px;
+            float: right;
+            line-height: 80px;
+            margin-right: 40px;
+            cursor: pointer;
+            display: none;
+        }
+
+        header nav h1 {
+            font-weight: normal;
+        }
+
+        header nav ul li i {
+            margin-right: 5px;
+        }
+
+        header nav #check {
+            display: none;
+        }
+
+        header nav form {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        @media (max-width: 920px) {
+            header nav .checkbtn {
+                display: block;
+            }
+
+            header nav ul {
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                background-color: rgb(80, 100, 12);
+                top: 110px;
+                left: -100%;
+                text-align: center;
+                transition: all 0.5s;
+                z-index: 1;
+            }
+
+            header nav ul li {
+                display: block;
+                margin: 50px 0;
+                line-height: 30px;
+            }
+
+            header nav ul li a {
+                font-size: 20px;
+            }
+
+            #check:checked ~ ul {
+                left: 0;
+            }
+
+            header nav h1 {
+                padding: 20px;
+            }
+        }
+
+        .no-scroll {
+            overflow-y: hidden;
+        }
+
+
+        /* ================= Main ============== */
+        
+        main {
+            width:100%;
+            display:flex;
+            flex-direction: column;
+            max-width: 1200px;
+            padding-inline: 20px;
+            margin: 100px auto;
+        }
+
+        main .image-slideshow {
+            width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        main .image-slideshow img {
+            width: 100%;
+            height: 600px;
+        }
+
+        main .image-slideshow .fade {
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {opacity: .5}
+            to {opacity: 1}
+        }
+                
+        main .image-slideshow .text-overlay {
+            position: absolute;
+            bottom: 10px; 
+            left: 30px; 
+            color: rgb(255, 255, 255); 
+            font-size: 15px; 
+            font-weight: normal;
+            font-family: Arial, Helvetica, sans-serif;
+            width:80%;
+            overflow: hidden;
+        }
+
+
+        main .image-slideshow .text-overlay h2{
+            font-weight: bold;
+        }
+
+
+        main .image-slideshow .text-overlay p{
+            width: 40%;
+        }
+
+        @media (max-width:920px){
+
+            main .image-slideshow img{
+                
+                height:400px;
+            }
+            main .image-slideshow .text-overlay{
+                font-size: 13px;
+                width: 100%;
+                left: 0;
+            }
+
+            
+            main .image-slideshow .text-overlay p{
+                width:80%
+            }
+
+        }
+
+
+        main .text-history {
+            width:100%;
+            margin-top: 60px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main .text-history h2{
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+
+        /* ================= Image-Showcase ============== */
+
+        main .image-showcase {
+            display: flex;
+            margin-top: 120px;
+            gap: 40px;
+        }
+
+
+
+        main .image-showcase .image-showcase-left {
+            width: 30%;
+        }
+
+        main .image-showcase .image-showcase-left figure{
+            width: 100%;
+            height:auto;
+        }
+
+        main .image-showcase .image-showcase-left figure img{
+            width: 100%;
+            height:515px;
+        }
+
+
+
+        main .image-showcase .image-showcase-right {
+            display: flex;
+            flex-direction: column;
+            width:70%;
+            gap:15px;
+        }
+
+        main .image-showcase .image-showcase-right .image-showcase-up{
+            display: flex;
+            justify-content: space-around;
+            gap:15px;
+        }
+
+        main .image-showcase .image-showcase-right .image-showcase-up img{
+            width: 100%
+        }
+
+        main .image-showcase .image-showcase-right .image-showcase-down figure {
+            width:100%;
+            height:46%;
+        }
+
+        main .image-showcase .image-showcase-right .image-showcase-down figure img{
+            width:100%;
+            height:240px;
+        }
+
+
+        @media (max-width: 920px) {
+        main .image-showcase {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        main .image-showcase .image-showcase-left {
+            width:100%;
+            height:50%;
+        }
+
+        main .image-showcase .image-showcase-left figure img{
+            height:400px;
+        }
+
+
+
+        main .image-showcase .image-showcase-right {
+            width:100%;
+        }
+    }
+
+        main #showcase-title{
+            margin: 50px auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        main #products-showcase {
+            width: 100%;
+            margin: 50px auto;
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        main #products-showcase figure {
+            width: 30%;
+            height:50%;
+        }
+
+        main #products-showcase figure img {
+            width:100%;
+            height:100%;
+        }
+
+    footer {
+            display: flex;
+            background-color: rgb(80, 100, 12);
+            padding: 30px;
+            justify-content: space-between;
+            color: white;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            align-items: center;
+
+        }
+
+    footer h2{
+        font-weight: normal;
+    }
+
+    footer p {
+        font-weight: lighter;
+    }
+
+    @media (max-width:500px){
+
+        footer {
+            justify-content: space-between;
+        }
+        footer p{
+            font-size: 10px;
+        }
+    }
+    
+
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <h1>Allgreens</h1>
+            <ul>
+                <li id="home_text">Home</li>
+                <li><a href="login.html" class="navbar-link">Login</a></li>
+                <li><a href="register.html" class="navbar-link">Registro</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <div class="image-slideshow">
+
+            
+            <figure class="image fade">
+                <img src="b4.jpeg" alt="Imagem 1">
+            </figure>
+
+            <figure class="image fade">
+                <img src="b2.jpeg" alt="Imagem 2">
+            </figure>
+
+            <figure class="image fade">
+                <img src="b3.jpeg" alt="Imagem 3">
+            </figure>
+            <div class="text-overlay">
+                <h2>LOREM IPSUM</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Proin venenatis, nulla non feugiat tincidunt, mauris quam mollis erat, eleifend ultricies quam diam quis leo. 
+                    Donec et ex odio. Duis consectetur rutrum erat ac tempus. 
+                    Sed venenatis elit eu nunc cursus tincidunt. 
+                    In odio diam, dignissim ut magna sit amet, congue porttitor lacus. Cras tincidunt rutrum ante, quis fringilla neque cursus at. 
+                    Mauris pretium fermentum ex a pretium. Fusce pulvinar felis enim, et malesuada purus sagittis id. Suspendisse vel turpis nulla.</p>
+            </div> 
+        </div>
+
+
+        <div class="text-history">
+
+            <h2>Our Story</h2>
+            <p>Mauris in pharetra dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce urna dolor, elementum non dictum sit amet, varius nec eros. 
+                Nulla nec nulla eget tortor tincidunt malesuada. Aliquam in justo est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                Morbi rutrum nibh at magna sollicitudin tincidunt. Cras varius et diam sit amet elementum. Nam vel nunc ut urna elementum dapibus. 
+                Morbi euismod interdum risus, vel vestibulum massa feugiat eget. Donec et tortor pellentesque, euismod orci sit amet, convallis risus. </p>
+
+            </div>
+
+        <div class="image-showcase">
+
+            <div class="image-showcase-left">
+                <figure>
+                    <img src="b1.jpeg">
+                </figure>
+            </div>
+
+            <div class="image-showcase-right">
+
+                <div class="image-showcase-up">
+
+                    <figure>
+                        <img src="b2.jpeg">
+                    </figure>
+
+                    <figure>
+                        <img src="b3.jpeg">
+                    </figure>
+
+                </div>
+
+                <div class="image-showcase-down">
+
+                    <figure>
+                        <img src="b4.jpeg">
+                    </figure>
+                    
+                </div>
+
+            </div>
+
+        </div>
+
+        <h2 id="showcase-title">FEATURED PRODUCTS</h2>
+
+
+
+        <div id="products-showcase">
+
+
+
+        </div>
+        
+
+
+    </main>
+
+    <footer>
+        <h2> Allgreens</h2>
+
+        <p> All rights reserved | Allgreens 2023</p>
+    </footer>
+
+    <script>
+
+        // ==================== Função de tirar scroll no botão responsivo ================== //
+        const checkBtn = document.getElementById('check');
+        const body = document.querySelector('body');
+
+        checkBtn.addEventListener('change', function() {
+            if (checkBtn.checked) {
+                body.classList.add('no-scroll');
+            } else {
+                body.classList.remove('no-scroll');
+            }
+        });
+
+
+        // ==================== Slider ================== //
+
+        let index = 0;
+        displayImages();
+            function displayImages() {
+            let i;
+            const images = document.getElementsByClassName("image");
+            for (i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            index++;
+            if (index > images.length) {
+                index = 1;
+            }
+            images[index-1].style.display = "block";
+            setTimeout(displayImages, 5000); 
+        }
+
+                
+        // ==================== Exibir imagens em destaque ================== //
+
+        fetch('http://localhost:3300/products')
+        .then(response => response.json())
+        .then(data => {
+            // Filtrar as imagens com o atributo "highlight" marcado como "sim"
+            const highlightImages = data.data
+            .filter(item => item.highlight.toLowerCase() === 'sim')
+            .map(item => item.image);
+
+            // Exibir as imagens na página
+            const productsShowcase = document.getElementById('products-showcase');
+            highlightImages.forEach(image => {
+            const figureElement = document.createElement('figure');
+            const imgElement = document.createElement('img');
+            imgElement.src = image;
+            figureElement.appendChild(imgElement);
+            productsShowcase.appendChild(figureElement);
+            });
+        })
+        .catch(error => {
+            console.error('Ocorreu um erro:', error);
+        });
+
+
+
+
+    </script>
+</body>
+</html>
